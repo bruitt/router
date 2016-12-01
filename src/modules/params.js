@@ -22,8 +22,8 @@ let paramsParser = ({ fallbackType, routes }) => {
   return (route) => {
     let { location } = route
     let transformedRoute = transformRoute(location.pathname)
-    let filteredRoutes = routes.filter(({ route }) => (
-      transformRoute.length === route.length &&
+    let filteredRoutes = routesList.filter(({ route }) => (
+      transformedRoute.length === route.length &&
       route.every((chunk, index) => {
         let isParam = typeof chunk === 'object'
         let equalChunks = chunk === transformedRoute[index]
@@ -33,9 +33,9 @@ let paramsParser = ({ fallbackType, routes }) => {
 
     if (filteredRoutes.length > 0) {
       let validRoute = filteredRoutes[0]
-      let params = validRoute.router.reduce((params, chunk, index) => {
+      let params = validRoute.route.reduce((params, chunk, index) => {
         if (typeof chunk === 'object' && chunk.name) {
-          params[chunk.name] = transformRoute[index]
+          params[chunk.name] = transformedRoute[index]
         }
 
         return params
