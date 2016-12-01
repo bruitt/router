@@ -1,0 +1,21 @@
+{
+  "name": "router-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --no-info --open --history-api-fallback"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "history": "^4.4.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-stage-0": "^6.16.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
